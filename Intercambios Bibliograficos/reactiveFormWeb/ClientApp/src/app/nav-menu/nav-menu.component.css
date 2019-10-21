@@ -1,0 +1,127 @@
+@media screen and (max-width: 2560px) {
+  li .glyphicon {
+    margin-right: 10px;
+  }
+
+  /* Highlighting rules for nav menu items */
+  li.link-active a,
+  li.link-active a:hover,
+  li.link-active a:focus {
+    background-color: #808080;
+    color: white;
+  }
+
+  /* Keep the nav menu independent of scrolling and on top of other items */
+  .main-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    font-size: 20px;
+  }
+
+
+  .navbar-inverse .navbar-nav > li > a {
+    color: white;
+  }
+
+  .navbar-nav {
+    margin: 7.5px -15px;
+    width: 100%;
+  }
+
+  .user {
+    float: right;
+  }
+
+}
+
+
+
+
+
+
+@media screen and (max-width: 1439px) {
+  li .glyphicon {
+    margin-right: 10px;
+  }
+  
+  /* Highlighting rules for nav menu items */
+  li.link-active a,
+  li.link-active a:hover,
+  li.link-active a:focus {
+    background-color: #808080;
+    color: white;
+  }
+
+  /* Keep the nav menu independent of scrolling and on top of other items */
+  .main-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    font-size: smaller;
+  }
+
+
+  .navbar-inverse .navbar-nav > li > a {
+    color: white;
+  }
+
+  .navbar-nav {
+    margin: 7.5px -15px;
+    width: 100%;
+  }
+
+
+  /* On small screens, convert the nav menu to a vertical sidebar */
+  .main-nav {
+    height: 100%;
+    width: calc(25% - 20px);
+  }
+
+  .navbar {
+    border-radius: 0px;
+    border-width: 0px;
+    height: 100%;
+    width: 100%;
+  }
+
+  .navbar-header {
+    float: none;
+  }
+
+  .navbar-collapse {
+    border-top: 1px solid #444;
+    padding: 0px;
+  }
+
+  .navbar ul {
+    float: none;
+  }
+
+  .navbar li {
+    float: none;
+    margin: 6px;
+  }
+
+  .navbar li a {
+      padding: 10px 16px;
+      border-radius: 4px;
+    }
+
+  .navbar a {
+    /* If a menu item's text is too long, truncate it */
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .user {
+    float: left;
+  }
+
+}

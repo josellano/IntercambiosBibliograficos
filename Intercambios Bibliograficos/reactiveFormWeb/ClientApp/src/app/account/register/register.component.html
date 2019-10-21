@@ -1,0 +1,44 @@
+<div class="contenedor">
+  <div class="titulo">
+    <h1>Ingrese sus datos de usuario</h1>
+  </div>
+  <form class="form-horizontal" novalidate [formGroup]="formGroup">
+    <fieldset>
+      <div class="form-group" [ngClass]="{'has-error': (formGroup.get('email').touched || formGroup.get('email').dirty) && !formGroup.get('email').valid }">
+        <label class="col-md-12 control-label" for="emailId">Email</label>
+        <div class="col-md-12">
+          <input class="form-control" id="emailId" type="text" required formControlName="email" />
+          <span class="help-block" *ngIf="(formGroup.get('email').touched || formGroup.get('email').dirty) && formGroup.get('email').errors">
+            <span class="text-danger" *ngIf="formGroup.get('email').errors.required">
+              El campo email es requerido.
+            </span>
+          </span>
+        </div>
+      </div>
+      <div class="form-group" [ngClass]="{'has-error': (formGroup.get('password').touched || formGroup.get('password').dirty) && !formGroup.get('password').valid }">
+        <label class="col-md-12 control-label" for="passwordId">Password</label>
+        <div class="col-md-12">
+          <input class="form-control" id="passwordId" type="password" required formControlName="password" />
+          <span class="help-block" *ngIf="(formGroup.get('password').touched || formGroup.get('password').dirty) && formGroup.get('password').errors">
+            <span class="text-danger" *ngIf="formGroup.get('password').errors.required">
+              El campo password es requerido.
+            </span>
+          </span>
+        </div>
+      </div>
+      <div class="col-md-12">       
+          <span class="text-danger" *ngIf="mensaje">
+            {{ mensaje }}
+          </span>
+      </div>
+      <div class="form-group">
+        <div class="col-md-12">
+          <span>
+            <button class="btn btn-primary" type="button" (click)="registrarse()" [disabled]="!formGroup.valid">Registrarse y Entrar</button>
+            <button class="btn btn-primary" type="button" [routerLink]='["/"]'>Cancelar</button>
+          </span>
+        </div>
+      </div>
+    </fieldset>
+  </form>
+</div>

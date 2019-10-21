@@ -1,0 +1,35 @@
+<h1>Materiales Bibliograficos</h1>
+
+<p *ngIf="!matList"><em>Loading...</em></p>
+
+
+
+    <table class='table' *ngIf="matList">
+      <thead>
+        <tr>
+          <th>Titulo</th>
+          <th>Autor</th>
+          <th>Edicion</th>
+          <th>Carrera</th>
+          <th>Universidad</th>
+          <th>Opciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let mat of matList">
+          <td>{{ mat.titulo }}</td>
+          <td>{{ mat.autor }}</td>
+          <td>{{ mat.edicion }}</td>
+          <td>{{ mat.carrera }}</td>
+          <td>{{ mat.universidad }}</td>
+
+          <td>
+            <a [routerLink]="['/material/details/', mat.materialID, mat.puntoLat, mat.puntoLng]">Ver</a> |
+            <a [routerLink]="['/material/edit/', mat.materialID]">Editar</a> |
+            <a [routerLink]="" (click)="delete(mat.materialID)">Eliminar</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+

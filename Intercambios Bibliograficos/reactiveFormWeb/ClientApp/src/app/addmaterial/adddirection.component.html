@@ -1,0 +1,45 @@
+<h2>Creacion de un Material</h2>
+<h3>Seleccione la ubicacion donde quiere entregar el material</h3>
+<hr />
+<div class="form">
+  <div class='row'>
+    <div class="col-sm-12">
+      <div class="form-group">
+        <label class='col-sm-12'>Direccion</label>
+        <input type='text' [(ngModel)]='location.address_level_1' class="form-control">
+      </div>
+    </div>
+    <div class="col-sm-12">
+      <div class="form-group">
+        <label class='col-sm-12'>Ciudad</label>
+        <input [(ngModel)]='location.address_level_2' class='form-control' />
+      </div>
+    </div>
+    <div class="col-sm-12">
+      <div class="form-group">
+        <label class='col-sm-12'>Provincia</label>
+        <input [(ngModel)]='location.address_state' class='form-control'>
+      </div>
+    </div>
+    <div class="col-sm-12">
+      <div class="form-group">
+        <label class='col-sm-12'>Pais</label>
+        <input [(ngModel)]='location.address_country' class='form-control'>
+      </div>
+    </div>
+    <div class="col-sm-12">
+      <div class='row'>
+        <span class="text-danger" *ngIf="!noResults">La direccion ingresada no se ha podido encontrar.</span>
+      </div>
+    </div>
+    <div class="col-sm-12">
+      <button (click)='updateOnMap()' type="submit" class="btn btn-primary">Buscar</button>
+    </div>
+ </div>
+  <div class="col-sm-12">
+    <div class='row'>
+      <button (click)='siguiente(location.lat,location.lng)' class="btn btn-primary" *ngIf="location.lat">Siguiente</button>
+
+    </div>
+  </div>
+</div>

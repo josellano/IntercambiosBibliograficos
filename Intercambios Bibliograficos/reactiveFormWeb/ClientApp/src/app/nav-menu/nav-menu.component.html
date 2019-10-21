@@ -1,0 +1,55 @@
+
+<div class='main-nav'>
+    <div class='navbar navbar-inverse'>
+       
+        <div class='clearfix'></div>
+        <div class='navbar-collapse collapse' [ngClass]='{ "in": isExpanded }'>
+          <ul class='nav navbar-nav'>
+            <li [routerLinkActive]='["link-active"]' [routerLinkActiveOptions]='{ exact: true }'>
+              <a [routerLink]='["/"]' (click)='collapse()'>
+                <span class='glyphicon glyphicon-home'></span>Intercambios Bibliograficos
+              </a>
+            </li>
+            <li [routerLinkActive]='["link-active"]'>
+              <a class="nav-link text-dark" [routerLink]='["/fetch-material"]'>
+                <span class='glyphicon glyphicon-align-justify'></span>
+                Mostrar Materiales
+              </a>
+            </li>
+            <li [routerLinkActive]='["link-active"]'>
+              <a class="nav-link text-dark" [routerLink]='["/register-material-direccion"]'>
+                <span class='glyphicon glyphicon-plus'></span>
+                Agregar Material
+              </a>
+            </li>
+            <li *ngIf="estaLogueado()" [routerLinkActive]='["link-active"]'>
+              <a class="nav-link text-dark" [routerLink]='["/mis-materiales/", creador]'>
+                <span class='glyphicon glyphicon-th-list'></span>
+                Mis Materiales
+              </a>
+            </li>
+            <li class="user" *ngIf="!estaLogueado()" [routerLinkActive]='["link-active"]'>
+              <a class="nav-link text-dark" [routerLink]='["/login"]'>
+                <span class='glyphicon glyphicon-user'></span>
+                Login
+              </a>
+            </li>
+            <li class="user" *ngIf="!estaLogueado()" [routerLinkActive]='["link-active"]'>
+              <a class="nav-link text-dark" [routerLink]='["/register-login"]'>
+                <span class='glyphicon glyphicon-floppy-save'></span>
+                Registrarse
+              </a>
+            </li>
+            <li class="user" *ngIf="estaLogueado()" [routerLinkActive]='["link-active"]' >
+              <a class="nav-link text-dark" (click)='logout()'>
+                <span class='glyphicon glyphicon-remove-circle'></span>
+                Logout
+              </a>
+            </li>
+            <li class="user" *ngIf="creador" [routerLinkActive]='["link-active"]'>
+              <a class="nav-link text-dark">   Hola  {{ creador }} </a>
+            </li>
+          </ul>
+        </div>
+    </div>
+</div>

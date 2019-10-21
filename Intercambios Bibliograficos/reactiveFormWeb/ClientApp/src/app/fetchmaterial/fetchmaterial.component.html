@@ -1,0 +1,33 @@
+
+  <h1>Materiales Bibliograficos</h1>
+
+  <p *ngIf="!matList"><em>Loading...</em></p>
+  <div class="form-group">
+    <input type="text" class="form-control" placeholder="Busqueda por titulo"
+           style="width:300px" [(ngModel)]="searchTerm" />
+  </div>
+  <table class='table' *ngIf="matList">
+    <thead>
+      <tr>
+        <th>Titulo</th>
+        <th>Autor</th>
+        <th>Edicion</th>
+        <th>Carrera</th>
+        <th>Universidad</th>
+        <th>Detalles</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let mat of matList | materialFilter:searchTerm">
+        <td>{{ mat.titulo }}</td>
+        <td>{{ mat.autor }}</td>
+        <td>{{ mat.edicion }}</td>
+        <td>{{ mat.carrera }}</td>
+        <td>{{ mat.universidad }}</td>
+
+        <td>
+          <a [routerLink]="['/material/details/', mat.materialID, mat.puntoLat, mat.puntoLng]">Ver</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>

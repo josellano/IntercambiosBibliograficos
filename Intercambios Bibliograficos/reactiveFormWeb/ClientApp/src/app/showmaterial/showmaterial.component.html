@@ -1,0 +1,68 @@
+<h1>Materiales Bibliograficos</h1>
+
+<p *ngIf="!mat"><em>Loading...</em></p>
+
+<table class='table' *ngIf="mat">
+    <thead>
+        <tr>
+            <th>Titulo</th>
+            <th>Autor</th>
+            <th>Edicion</th>
+            <th>Carrera</th>
+            <th>Universidad</th>
+            <th>Valor</th>
+            <th>Estado</th>
+            <th>Email</th>
+            <th>Celular</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>{{ mat.titulo }}</td>
+            <td>{{ mat.autor }}</td>
+            <td>{{ mat.edicion }}</td>
+            <td>{{ mat.carrera }}</td>
+            <td>{{ mat.universidad }}</td>
+            <td>{{ mat.valor }}</td>
+            <td>{{ mat.estado }}</td>
+            <td>{{ mat.email }}</td>
+            <td>{{ mat.celular }}</td>
+
+        </tr>
+    </tbody>
+</table>
+
+
+<div class="map">
+    <agm-map [(latitude)]="location.lat" [(longitude)]="location.lng" [(zoom)]="location.zoom" [disableDefaultUI]="true" [zoomControl]="true" [(fitBounds)]='location.viewport'>
+        <agm-marker [(latitude)]="location.marker.lat" [(longitude)]="location.marker.lng" [markerDraggable]="location.marker.draggable" (dragEnd)='markerDragEnd($event)'></agm-marker>
+    </agm-map>
+</div>
+
+<div>
+  <button class="btn btn-primary" (click)="verDireccion()" type="button">Ver Direccion</button>
+  <p></p>
+</div>
+
+<table class='table' *ngIf="location.address_level_1">
+  <thead>
+    <tr>
+      <th>Direccion</th>
+      <th>Ciudad</th>
+      <th>Provincia</th>
+      <th>Pais</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>{{ location.address_level_1 }}</td>
+      <td>{{ location.address_level_2 }}</td>
+      <td>{{ location.address_state }}</td>
+      <td>{{ location.address_country }}</td>
+    </tr>
+  </tbody>
+</table>
+<div>
+  <button class="btn btn-primary" (click)="return()">Volver</button>
+</div>

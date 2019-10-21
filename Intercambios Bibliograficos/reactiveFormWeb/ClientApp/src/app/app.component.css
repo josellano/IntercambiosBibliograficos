@@ -1,0 +1,194 @@
+@media screen {
+  
+  .body-content {
+    font-size: 24px;
+    color: #ffffff;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    padding-top: 5%;
+  }
+
+  .principal {
+    height: 100vh;
+    background-image: url(../app/source/libros3.jpg);
+    margin: 0px;
+    background-position: center center;
+    background-repeat: space;
+    background-attachment: fixed;
+    background-size: cover;
+  }
+
+
+
+  .btn-primary {
+    background-color: sienna;
+    border-color: black;
+    margin: 10px;
+    font-size: 20px;
+  }
+
+  .column {
+    float: left;
+    padding: 10px;
+  }
+
+  .left, .right {
+    width: 15%;
+    height: 100vh;
+  }
+
+  .middle {
+    width: 70%;
+  }
+
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  /* CSS para las tablas*/
+  .table {
+    background-color: sienna;
+    text-align: center;
+    align-content: center;
+    border-radius: 10px;
+  }
+
+  th {
+    padding-left: 0px;
+    padding-right: 0px;
+    text-align: center;
+  }
+
+  a {
+    color: white;
+  }
+
+  th, td {
+    border-right: 1px solid #eeeeef;
+  }
+
+    th:last-child, td:last-child {
+      border-right: none;
+    }
+
+  .table > thead > tr > th {
+    background-color: darkgoldenrod;
+  }
+  /*CSS para las tablas*/
+
+
+  .form-control {
+    font-size: 25px;
+    color: black;
+  }
+
+  span.text-danger {
+    color: yellow;
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+}
+
+
+@media screen and (max-width: 768px) {
+
+  .body-content {
+    padding-top: 2%;
+    margin-left: calc(15% - 20px);
+    font-size: 15px;
+    color: #ffffff;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+  }
+
+  .principal {
+    height: 100vh;
+    background-image: url(../app/source/libros3.jpg);
+    margin: 0px;
+    background-position: center center;
+    background-repeat: space;
+    background-attachment: fixed;
+    background-size: cover;
+  }
+
+  
+  .column {
+    float: left;
+    padding: 10px;
+  }
+
+  .left, .right {
+    width: 15%;
+    height: 100vh;
+  }
+
+  .middle {
+    width: 70%;
+  }
+
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  .h1,h1,h2 {
+     font-size: small;
+  }
+
+  h3 {
+     font-size: smaller;
+  }
+
+  .table {
+    background-color: sienna;
+    text-align: center;
+    align-content: center;
+    border-radius: 10px;
+    font-size: xx-small;
+  }
+
+  th {
+    padding-left: 0px;
+    padding-right: 0px;
+    text-align: center;
+  }
+
+  a {
+    color: white;
+  }
+
+  th, td {
+    border-right: 1px solid #eeeeef;
+  }
+
+    th:last-child, td:last-child {
+      border-right: none;
+    }
+
+  .table > thead > tr > th {
+    background-color: darkgoldenrod;
+  }
+
+  .btn-primary {
+    background-color: sienna;
+    border-color: black;
+    margin: 10px;
+    font-size: smaller;
+  }
+
+
+  .form-control {
+    font-size: 25px;
+    color: black;
+  }
+
+  span.text-danger {
+    color: yellow;
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+
+  
+
+}
